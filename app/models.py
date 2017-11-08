@@ -14,7 +14,7 @@ class Vestibular(models.Model):
     nome = models.CharField(max_length=200)
 
 
-class Candidato:
+class Candidato(models.Model):
     nome = models.CharField(max_length=200)
     rg = models.IntegerField()
     cpf = models.IntegerField(unique=True)
