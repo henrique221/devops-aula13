@@ -89,7 +89,6 @@ def lista_candidatos(request):
             'nome': Candidato.nome,
             'rg': Candidato.rg,
             'cpf': Candidato.cpf,
-            'endereço': Candidato.endereco,
             'year': datetime.now().year
         })
     )
