@@ -79,16 +79,17 @@ def lista_vestibulares(request):
 
 def lista_candidatos(request):
     assert isinstance(request, HttpRequest)
+    candidatos = Candidato.objects.all()
     return render(
         request,
         'app/lista_candidatos.html',
         context_instance = RequestContext(request,
         {
             'title':'Lista de Candidatos',
-            'candidatos': Candidato.objects.all(),
-            'nome': Candidato.nome,
-            'rg': Candidato.rg,
-            'cpf': Candidato.cpf,
+            'candidatos': candidatos,
+            'nome': candidatos.nome,
+            'rg': candidatos.rg,
+            'cpf': candidatos.cpf,
             'year': datetime.now().year
         })
     )
